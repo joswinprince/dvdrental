@@ -31,6 +31,8 @@ select category_id from category where name ='Action'
 select film_id from film_category where category_id in (select category_id from category where name ='Action')
 ```
 ### select all the films  which are action films
+![category](category.jpg) ![category](film_category.jpg) 
+![category](film.jpg)
 ```
 select * from film where film_id in (select film_id from film_category where category_id in (select category_id from category where name ='Action'))
 ```
