@@ -24,7 +24,11 @@ category.category_id =film_category.category_id
 ```
 select category_id from category where name ='Action'
 ```
-### query film_id in film_category using category from category_id
+### select action films in film_category table
 ```
 select film_id from film_category where category_id in (select category_id from category where name ='Action')
+```
+### select all the films  which are action films
+```
+select * from film where film_id in (select film_id from film_category where category_id in (select category_id from category where name ='Action'))
 ```
