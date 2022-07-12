@@ -26,6 +26,7 @@ category.category_id =film_category.category_id
 select category_id from category where name ='Action'
 ```
 ### select action films in film_category table
+![category](category.jpg)![category](film_category.jpg)
 ```
 select film_id from film_category where category_id in (select category_id from category where name ='Action')
 ```
