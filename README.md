@@ -10,3 +10,4 @@ select name from category where category_id in (select category_id from film_cat
 ```
 select category.name as Category_Name,film_category.last_update as Film_LastUpdate from category INNER JOIN film_category ON category.category_id = film_category.category_id;
 ```
+![dvdrental_ER.jpg](dvdrental_ER.jpg)
