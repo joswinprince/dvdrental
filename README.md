@@ -20,3 +20,7 @@ select category.name ,category.last_update as cat_last_update,
 film_category.last_update as film_cate_lastupdate from category inner join film_category on
 category.category_id =film_category.category_id
 ```
+### query category_id using the category "Action"
+```
+select category_id from category where name ='Action'
+```
