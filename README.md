@@ -22,6 +22,7 @@ category.category_id =film_category.category_id
 ```
 ### query category_id using the category "Action"
 ```
+![category](category.jpg)
 select category_id from category where name ='Action'
 ```
 ### select action films in film_category table
