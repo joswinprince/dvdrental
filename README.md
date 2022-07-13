@@ -49,3 +49,7 @@ select film_id from film_category where category_id in (select category_id from 
 select title from film where film_id in (select film_id from film_category where category_id in (select category_id from category where name ='Animation'))
 
 ```
+### Select film_id from 25 to 30
+```
+select * from film where film_id >=25 and film_id <=30 
+```
