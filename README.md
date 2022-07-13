@@ -74,3 +74,7 @@ select * from film where title like '_r%' and film_id in (select film_id from fi
 ```
 select Count(title) from film where title like '_r%' and film_id in (select film_id from film_category where category_id in (select category_id from category where name ='Animation'))
 ```
+### Average of rental_rate from tables where second letter r and category as animation.
+```
+select Avg(rental_rate) from film where title like '_r%' and film_id in (select film_id from film_category where category_id in (select category_id from category where name ='Animation'))
+```
