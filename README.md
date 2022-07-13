@@ -57,3 +57,16 @@ select * from film where film_id >=25 and film_id <=30
 ```
 select * from film where title like 'A%'
 ```
+### Query films that start with 'A' & ends with r
+```
+select * from film where title like 'A%r'
+```
+### select title with second letter has r
+```
+select * from film where title like '_r%'
+```
+### select title with second letter has r and category as Animation
+```
+select * from film where title like '_r%' and film_id in (select film_id from film_category where category_id in (select category_id from category where name ='Animation'))
+
+```
