@@ -53,3 +53,7 @@ select title from film where film_id in (select film_id from film_category where
 ```
 select * from film where film_id >=25 and film_id <=30 
 ```
+### Query to get all films starting in 'A'
+```
+select * from film where title like 'A%'
+```
