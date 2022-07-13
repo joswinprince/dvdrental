@@ -70,3 +70,7 @@ select * from film where title like '_r%'
 select * from film where title like '_r%' and film_id in (select film_id from film_category where category_id in (select category_id from category where name ='Animation'))
 
 ```
+### No of RRows while selecting title with second letter has r and category as Animation 
+```
+select Count(title) from film where title like '_r%' and film_id in (select film_id from film_category where category_id in (select category_id from category where name ='Animation'))
+```
