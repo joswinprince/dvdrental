@@ -5,76 +5,80 @@
 ![dvdrental_ER](dvdrental_ER.jpg)
 
 
-### Code to select a category 'name' by using 'film_id'
+### 1.Code to select a category 'name' by using 'film_id'
 ```
 select name from category where category_id in (select category_id from film_category where film_id =133);
 ```
 
-### Code to select name from  category and last_update from film_category table 
+### 2.Code to select name from  category and last_update from film_category table 
 ```
 select category.name as Category_Name,film_category.last_update as Film_LastUpdate from category INNER JOIN film_category ON category.category_id = film_category.category_id;
 ```
-### code to select lastupdate from category table and lastupdate from film_category
+### 3.code to select lastupdate from category table and lastupdate from film_category
 ```
 select category.name ,category.last_update as cat_last_update,
 film_category.last_update as film_cate_lastupdate from category inner join film_category on
 category.category_id =film_category.category_id
 ```
-### query category_id using the category "Action"
+### 4.query category_id using the category "Action"
 ![category](category.jpg)
 ```
 select category_id from category where name ='Action'
 ```
-### select action films in film_category table
+### 5.select action films in film_category table
 ![category](category.jpg) ![category](film_category.jpg)
 ```
 select film_id from film_category where category_id in (select category_id from category where name ='Action')
 ```
-### select all the films  which are action films
+### 6.select all the films  which are action films
 ![category](category.jpg) ![category](film_category.jpg) 
 ![category](film.jpg)
 ```
 select * from film where film_id in (select film_id from film_category where category_id in (select category_id from category where name ='Action'))
 ```
-### select category id of Animation Movies
+### 7.select category id of Animation Movies
 ```
 select category_id from category where name ='Animation'
 ```
-### select film_id of Animation Movies
+### 8.select film_id of Animation Movies
 ```
 select film_id from film_category where category_id in (select category_id from category where name ='Animation')
 ```
-### Select title from film of category Animation
+### 9.Select title from film of category Animation
 ```
 select title from film where film_id in (select film_id from film_category where category_id in (select category_id from category where name ='Animation'))
 
 ```
-### Select film_id from 25 to 30
+### 10.Select film_id from 25 to 30
 ```
 select * from film where film_id >=25 and film_id <=30 
 ```
-### Query to get all films starting in 'A'
+### 11.Query to get all films starting in 'A'
 ```
 select * from film where title like 'A%'
 ```
-### Query films that start with 'A' & ends with r
+### 12.Query films that start with 'A' & ends with r
 ```
 select * from film where title like 'A%r'
 ```
-### select title with second letter has r
+### 13.select title with second letter has r
 ```
 select * from film where title like '_r%'
 ```
-### select title with second letter has r and category as Animation
+### 14.select title with second letter has r and category as Animation
 ```
 select * from film where title like '_r%' and film_id in (select film_id from film_category where category_id in (select category_id from category where name ='Animation'))
 
 ```
-### No of RRows while selecting title with second letter has r and category as Animation 
+### 15.No of RRows while selecting title with second letter has r and category as Animation 
 ```
 select Count(title) from film where title like '_r%' and film_id in (select film_id from film_category where category_id in (select category_id from category where name ='Animation'))
 ```
-### Average of rental_rate from tables where second letter r and category as animation.
+### 14.Average of rental_rate from tables where second letter r and category as animation.
 ```
 select Avg(rental_rate) from film where title like '_r%' and film_id in (select film_id from film_category where category_id in (select category_id from category where name ='Animation'))
+```
+### 15.Query to get all the film acted by actor penelope Guiness
+```
+select * from film where film_id in (select film_id from film_actor where actor_id in (select actor_id from actor where first_name='Penelope' and last_name='Guiness'))
 ```
