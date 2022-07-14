@@ -82,3 +82,9 @@ select Avg(rental_rate) from film where title like '_r%' and film_id in (select 
 ```
 select * from film where film_id in (select film_id from film_actor where actor_id in (select actor_id from actor where first_name='Penelope' and last_name='Guiness'))
 ```
+### 16. To query largest amount in a row
+```
+select * from payment where amount = (select max(amount) from payment)
+```
+
+
