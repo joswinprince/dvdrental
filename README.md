@@ -90,5 +90,8 @@ select * from payment where amount = (select max(amount) from payment)
 ```
 select * from film where film_id in (select film_id from inventory where inventory_id in (select inventory_id from rental where rental_id in(select rental_id from payment where amount = (select max(amount) from payment))))
 ```
-
+### 18.get rwntal details based on the customer
+```
+select * from rental where rental_id in (select rental_id from payment where customer_id in(select customer_id from customer where first_name ='Jared' and last_name = 'Ely'))
+```
 
